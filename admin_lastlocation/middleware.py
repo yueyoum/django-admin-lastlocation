@@ -1,6 +1,4 @@
 import re
-from django.http import HttpResponse
-
 
 class LastLocation(object):
     def __init__(self):
