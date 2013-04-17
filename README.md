@@ -61,8 +61,8 @@ class MyAdmin(admin.ModelAdmin, AdminLastLocationMixin):
 		if not referer or '_continue' in request.POST or '_addanother' in request.POST:
 			return super(self.__clas__, self).response_change(request, obj)
 
-	referer = url_e_pattern.split(referer)[0]
-	return HttpResponseRedirect(referer + '&e=' + str(obj.id))
+		referer = url_e_pattern.split(referer)[0]
+		return HttpResponseRedirect(referer + '&e=' + str(obj.id))
 ```
 
 
