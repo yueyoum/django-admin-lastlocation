@@ -7,7 +7,7 @@
 
 ## 视频演示
 
-[优酷]()
+[优酷](https://github.com/xen0n/django-admin-lastlocation.git)
 
 
 ## 指南
