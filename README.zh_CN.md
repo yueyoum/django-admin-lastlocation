@@ -7,7 +7,7 @@
 
 ## 视频演示
 
-[优酷](https://github.com/xen0n/django-admin-lastlocation.git)
+[优酷](http://v.youku.com/v_show/id_XNTQ0MTkwNzU2.html)
 
 
 ## 指南
