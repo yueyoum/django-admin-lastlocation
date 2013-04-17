@@ -1,33 +1,30 @@
 # Django-Admin-LastLocation
 
-After editing an item, the admin page will redirect to the app's first page
-list views; this is default behavior. But it is terrible if one have a lot
-of items, in which case it can be really hard to find the item one edited
-just now.
+编辑完一条项目之后，Django 的管理页面默认会自动重定向到项目列表首页。但是，如果项目的数量很多的话，就会很难找到刚刚编辑过的项目了，不好。
 
-This simple project aims to help you locate your last-edited item.
+这个小项目可以帮你定位最后一次编辑过的项目。
 
 
-## Video Demo
+## 视频演示
 
-[Youku](http://v.youku.com/v_show/id_XNTQ0MTkwNzU2.html)
-
-
-## Guide
-
-*Note*: This project is meant to be a guide, *not* a reusable Django app.
+[优酷]()
 
 
-#### Installation
+## 指南
+
+*注意*: 这个项目是一份指南，**不是**可重用的 app。
+
+
+#### 安装
 
     git clone https://github.com/yueyoum/django-admin-lastlocation.git
 
-then copy `django-admin-lastlocation/admin_lastlocation` to your `$PYTHONPATH`.
+然后把 `django-admin-lastlocation/admin_lastlocation` 拷贝到你的 `$PYTHONPATH` 里。
 
 
-#### Settings
+#### 配置
 
-##### In your project's `settings.py`
+##### 在项目的 `settings.py` 里
 
 ```python
 from admin_lastlocation import admin_lastlocation_static_path
@@ -45,7 +42,7 @@ MIDDLEWARE_CLASSES = (
 ```
 
 
-##### In your `admin.py`
+##### 在 `admin.py` 里
 
 ```python
 import re
@@ -64,11 +61,11 @@ class MyAdmin(admin.ModelAdmin, AdminLastLocationMixin):
         if not referer or '_continue' in request.POST or '_addanother' in request.POST:
             return super(self.__class__, self).response_change(request, obj)
 
-        referer = url_e_pattern.split(referer)[0]
-        return HttpResponseRedirect(referer + '&e=' + str(obj.id))
+    referer = url_e_pattern.split(referer)[0]
+    return HttpResponseRedirect(referer + '&e=' + str(obj.id))
 ```
 
-Now, your admin page should behave the same as in the video demo.
+现在，你的管理页面行为应该和视频演示里的一致了。
 
 
 <!-- vim:set ai et ts=4 sw=4 sts=4 fenc=utf-8: -->
