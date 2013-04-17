@@ -11,7 +11,7 @@ This simple project can help you locate your last edited item.
 
 ## Video Demo
 
-[youku]()
+[youku](http://v.youku.com/v_show/id_XNTQ0MTkwNzU2.html)
 
 
 ## Guide
